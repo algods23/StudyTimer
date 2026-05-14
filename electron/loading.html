@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Timer</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                align-items: center;
+                background: #fff1f2;
+                color: #1e293b;
+                display: flex;
+                font-family: "Segoe UI", Arial, sans-serif;
+                justify-content: center;
+                margin: 0;
+                min-height: 100vh;
+            }
+
+            .panel {
+                background: #ffffff;
+                border: 1px solid #ffe4e6;
+                border-radius: 8px;
+                box-shadow: 0 20px 60px rgba(244, 63, 94, 0.12);
+                max-width: 420px;
+                padding: 40px;
+                text-align: center;
+                width: calc(100% - 48px);
+            }
+
+            .logo {
+                align-items: center;
+                background: #f43f5e;
+                border-radius: 8px;
+                color: #ffffff;
+                display: inline-flex;
+                font-size: 22px;
+                font-weight: 800;
+                height: 56px;
+                justify-content: center;
+                width: 56px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin: 22px 0 8px;
+            }
+
+            p {
+                color: #64748b;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            .loader {
+                background: #ffe4e6;
+                border-radius: 999px;
+                height: 8px;
+                margin-top: 28px;
+                overflow: hidden;
+            }
+
+            .loader span {
+                animation: loading 1.4s ease-in-out infinite;
+                background: #f43f5e;
+                border-radius: inherit;
+                display: block;
+                height: 100%;
+                width: 45%;
+            }
+
+            @keyframes loading {
+                0% { transform: translateX(-110%); }
+                100% { transform: translateX(230%); }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="panel">
+            <div class="logo">ST</div>
+            <h1>Starting Study Timer</h1>
+            <p>Preparing the local Laravel app and opening your desktop workspace.</p>
+            <div class="loader"><span></span></div>
+        </main>
+    </body>
+</html>

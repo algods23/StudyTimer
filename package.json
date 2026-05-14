@@ -1,10 +1,18 @@
 {
     "$schema": "https://www.schemastore.org/package.json",
+    "name": "study-timer",
+    "productName": "Study Timer",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
+    "main": "electron/main.cjs",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "electron:prepare": "node scripts/prepare-electron-build.cjs",
+        "electron:dev": "electron .",
+        "electron:build": "npm run build && npm run electron:prepare && node scripts/build-electron.cjs",
+        "dist": "npm run electron:build"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -13,6 +21,8 @@
         "autoprefixer": "^10.4.2",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
+        "electron": "^42.0.1",
+        "electron-builder": "^26.8.1",
         "laravel-vite-plugin": "^2.0.0",
         "postcss": "^8.4.31",
         "tailwindcss": "^3.1.0",
@@ -20,5 +30,63 @@
     },
     "dependencies": {
         "chart.js": "^4.5.1"
+    },
+    "build": {
+        "appId": "com.algods23.studytimer",
+        "productName": "Study Timer",
+        "asar": false,
+        "compression": "store",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "app/**",
+            "bootstrap/**",
+            "config/**",
+            "database/**",
+            "electron/**",
+            "public/**",
+            "resources/**",
+            "routes/**",
+            "storage/**",
+            "vendor/**",
+            "!vendor/fakerphp/**",
+            "!vendor/filp/**",
+            "!vendor/hamcrest/**",
+            "!vendor/laravel/breeze/**",
+            "!vendor/laravel/pail/**",
+            "!vendor/laravel/pint/**",
+            "!vendor/laravel/sail/**",
+            "!vendor/mockery/**",
+            "!vendor/nunomaduro/collision/**",
+            "!vendor/phpunit/**",
+            "!vendor/sebastian/**",
+            "!vendor/theseer/**",
+            "artisan",
+            "composer.json",
+            "composer.lock",
+            "package.json"
+        ],
+        "win": {
+            "compression": "store",
+            "signAndEditExecutable": false,
+            "verifyUpdateCodeSignature": false,
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "artifactName": "StudyTimerSetup.${ext}"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "Study Timer"
+        }
     }
 }
