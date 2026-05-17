@@ -1,59 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ⏱️ Study Timer — Premium Desktop App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome to **Study Timer**, a gorgeous, modern, state-of-the-art study productivity and time-management companion built specifically for Windows. This application helps you stay organized, set smart cascading targets, plan subject routines, and queue up productive intervals seamlessly from your desktop.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features Built For Success
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **⏱️ Advanced Multi-Segment Study Playlist:**
+  *Construct custom interval routines (e.g., 10m Math ➔ 5m Break ➔ 10m Science ➔ 5m Break ➔ 15m English). The timer chimes between slots, tracks progress on a gorgeous horizontal timeline, and logs finished subject sessions automatically.*
+- **📅 Weekly Schedule Planner:**
+  *Plan your study hours across all 7 days of the week. Supports subject categorizations, color-coded tags, and goal trackers.*
+- **🛡️ Overlapping Conflict Prevention:**
+  *Never double-book your time. The database-level conflict checker blocks overlapping schedule slots and guides you to perfect time-blocking.*
+- **📊 Bi-directional Cascading Goals:**
+  *Type into Daily, Weekly, or Monthly goal inputs, and the system instantly cascades and aligns all targets across your statistics and progress bars.*
+- **📈 Rich Analytics & Subject Balance:**
+  *Interactive charts, completion percentages, and subject breakdown statistics keep you accountable.*
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 💾 Quick Installation Guide (Using Setup Executable)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Follow these simple steps to install the desktop application on any Windows computer:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1️⃣ Locate the Installer
+The pre-compiled Windows installer is saved directly inside your project directory at:
+```text
+dist/StudyTimerSetup.exe
+```
 
-## Laravel Sponsors
+### 2️⃣ Start the Installation
+1. Double-click the **`StudyTimerSetup.exe`** file.
+2. If Windows Defender SmartScreen asks for confirmation, click **"More Info"** and then select **"Run anyway"** (this is normal for self-signed developer executables).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3️⃣ Configure Options
+1. The custom NSIS installer window will appear.
+2. Select whether to install the application for all users or just your local Windows account.
+3. Click **Next**.
+4. (Optional) Choose the destination folder path (defaults to your program files directory).
 
-### Premium Partners
+### 4️⃣ Complete Installation & Launch
+1. Ensure **"Create Desktop Shortcut"** is checked.
+2. Click **Install**.
+3. Once the progress bar fills up, click **Finish**.
+4. **Study Timer** will launch instantly, and a shortcut will be pinned to your Windows desktop/Start Menu!
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Developer Rebuild & Compilation Guide
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+If you modify the source code and want to compile a fresh, updated `StudyTimerSetup.exe` installer, open your terminal in the project root folder and execute:
 
-## Code of Conduct
+### 1. Install Node Dependencies
+```powershell
+npm.cmd install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2. Package and Build Executable
+```powershell
+npm.cmd run dist
+```
+This automated developer pipeline will:
+- Re-compile the Vite production assets.
+- Prepare and bundle the local PHP runtime.
+- Run `electron-builder` to package, compress, sign, and output a new **`StudyTimerSetup.exe`** installer in the `dist/` directory.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+*Enjoy distraction-free, focused study sessions with **Study Timer**!*
