@@ -1,4 +1,14 @@
 <x-guest-layout>
+    <!-- Back Button -->
+    <div class="mb-4">
+        <a href="{{ url('/') }}" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-rose-500 transition-colors duration-150 ease-in-out whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            {{ __('Back') }}
+        </a>
+    </div>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 

@@ -3,6 +3,7 @@
         ['label' => 'Dashboard', 'route' => 'dashboard'],
         ['label' => 'Timer', 'route' => 'timer.index'],
         ['label' => 'Subjects', 'route' => 'subjects.index'],
+        ['label' => 'Schedule', 'route' => 'schedules.index'],
         ['label' => 'History', 'route' => 'sessions.index'],
         ['label' => 'Analytics', 'route' => 'analytics.index'],
         ['label' => 'Goals', 'route' => 'goals.edit'],

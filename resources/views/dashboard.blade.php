@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-                <p class="text-sm font-semibold uppercase tracking-wide text-rose-500">Welcome back</p>
+                <p class="text-sm font-semibold uppercase tracking-wide text-rose-500">Welcome back, {{ Auth::user()->name }}</p>
                 <h1 class="text-3xl font-bold text-slate-900">Today's study dashboard</h1>
             </div>
             <a href="{{ route('timer.index') }}" class="rounded-lg bg-rose-500 px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-rose-600">Start studying</a>

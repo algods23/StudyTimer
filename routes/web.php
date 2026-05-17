@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SessionHistoryController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TimerController;
@@ -20,6 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/timer/sessions', [TimerController::class, 'store'])->name('timer.sessions.store');
     Route::resource('subjects', SubjectController::class)->except('show');
     Route::get('/sessions', SessionHistoryController::class)->name('sessions.index');
+    Route::get('/schedules', [ScheduleController::class, 'index'])->name('schedules.index');
+    Route::post('/schedules', [ScheduleController::class, 'store'])->name('schedules.store');
+    Route::delete('/schedules/{schedule}', [ScheduleController::class, 'destroy'])->name('schedules.destroy');
     Route::get('/goals', [GoalController::class, 'edit'])->name('goals.edit');
     Route::put('/goals', [GoalController::class, 'update'])->name('goals.update');
     Route::get('/analytics', AnalyticsController::class)->name('analytics.index');

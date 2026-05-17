@@ -18,9 +18,7 @@
                 <div class="flex gap-3">
                     @auth
                         <a href="{{ route('dashboard') }}" class="rounded-lg bg-rose-500 px-5 py-3 text-sm font-bold text-white hover:bg-rose-600">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="rounded-lg px-5 py-3 text-sm font-bold text-rose-700 hover:bg-white">Log in</a>
-                        <a href="{{ route('register') }}" class="rounded-lg bg-rose-500 px-5 py-3 text-sm font-bold text-white hover:bg-rose-600">Register</a>
+                  
                     @endauth
                 </div>
             </nav>

@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notification::class);
     }
+
+    public function studySchedules()
+    {
+        return $this->hasMany(StudySchedule::class);
+    }
 }
